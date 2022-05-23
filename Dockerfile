@@ -1,5 +1,6 @@
-FROM openjdk:11.0.12-slim
+FROM gradle:7.4.2-jdk8
+COPY . /home/gradle/src
+WORKDIR /home/gradle/src
+RUN gradle build
 EXPOSE 8080
-ARG JAR_FILE=build/libs/demo-0.0.1-SNAPSHOT.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-Dspring.profiles.active=dev", "-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/home/gradle/src/build/libs/jibber-jabber-0.0.1-SNAPSHOT.jar"]
