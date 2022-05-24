@@ -2,7 +2,6 @@ package JibberJabber.Posts.controller;
 
 import JibberJabber.Posts.model.Post;
 import JibberJabber.Posts.services.PostService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +17,7 @@ public class PostController {
     @GetMapping
     List<Post> getAll() {return postService.getAllPosts();}
 
+    @PostMapping
     Post save(@RequestBody Post newPost) {
         return postService.save(newPost);
     }
@@ -27,12 +27,12 @@ public class PostController {
         return postService.find(id);
     }
 
-    @GetMapping("/{id}")
+    @PutMapping("/{id}")
     Post replace(@RequestBody Post newPost, @PathVariable Long id) {
         return postService.replace(newPost, id);
     }
 
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     void delete(@PathVariable Long id) {
         postService.delete(id);
     }

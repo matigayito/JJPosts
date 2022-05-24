@@ -3,10 +3,7 @@ package JibberJabber.Posts.controller;
 import JibberJabber.Posts.model.User;
 import JibberJabber.Posts.services.UserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +17,7 @@ public class UserController {
     @GetMapping
     List<User> getAll() {return userService.getAllUsers();}
 
+    @PostMapping
     User save(@RequestBody User newUser) {
         return userService.save(newUser);
     }
@@ -29,12 +27,12 @@ public class UserController {
         return userService.find(id);
     }
 
-    @GetMapping("/{id}")
+    @PutMapping("/{id}")
     User replace(@RequestBody User newUser, @PathVariable Long id) {
         return userService.replace(newUser, id);
     }
 
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     void delete(@PathVariable Long id) {
         userService.delete(id);
     }
