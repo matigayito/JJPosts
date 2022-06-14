@@ -2,8 +2,10 @@ package JibberJabber.Posts.controller;
 
 import JibberJabber.Posts.model.Post;
 import JibberJabber.Posts.services.PostService;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
