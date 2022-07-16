@@ -1,0 +1,6 @@
+[submodule "JJUsers"]
+	path = JJUsers
+	url = https://github.com/matigayito/JJUsers.git
+[submodule "JJInfra"]
+	path = JJInfra
+	url = https://github.com/matigayito/JJInfra.git
