@@ -26,29 +26,3 @@ services:
       POSTGRES_USER: sa
       POSTGRES_PASSWORD: password
       POSTGRES_DB: compose-db
-
-        ##keycloakdb:
-        ##  container_name: db_keycloak
-        ##  image: postgres:12
-        ##ports:
-        ##  - 5433:5432
-        ##environment:
-        ##POSTGRES_USER: sa
-        ##POSTGRES_PASSWORD: password
-        ##POSTGRES_DB: keycloak-db
-
-        ##keycloak:
-        ##image: quay.io/keycloak/keycloak:legacy
-        ##environment:
-        ##DB_VENDOR: POSTGRES
-        ##DB_ADDR: db_keycloak
-        ##DB_DATABASE: keycloak-db
-        ##DB_USER: sa
-        ##DB_SCHEMA: public
-        ##DB_PASSWORD: password
-        ##KEYCLOAK_USER: admin
-        ##KEYCLOAK_PASSWORD: password
-        ##ports:
-        ##- 8080:808*-0
-      ##depends_on:
-      ##- keycloakdb
